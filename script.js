@@ -78,8 +78,7 @@ function lapTimer(){
 
     div.innerHTML = `
         <p><span class="lap-min">${min < 10 ? "0" + min : min}</span>: <span id="lap-sec">${sec < 10 ? "0" + sec : sec}</span>: <span id="lap-ms">${ms/10 < 10 ? "0" + ms/10 : ms/10}</span></p>
-                
-        <p>X</p>
+        <p class="btn-enabled">X</p>
     `
 
     div.classList.add("lap-card")
