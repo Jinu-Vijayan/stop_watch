@@ -5,8 +5,9 @@ const RESET =  document.querySelector("#reset");
 let timeInMs = 0;
 let timer;
 
-/************************************************************************** updateTimer fucntion will update the DOM according to the value calculated form the timeInMs variable
-**************************************************************************/
+/***************************************************************************
+ updateTimer fucntion will update the DOM according to the value calculated  form the timeInMs variable
+***************************************************************************/
 
 function updateTimer(){
     let sec = Math.floor(timeInMs / 1000) % 60;
@@ -27,6 +28,9 @@ function startTimer(){
         updateTimer();
         
     },10);
+    START.disabled = true;
+    START.classList.remove("btn-enabled");
+    START.classList.add("btn-disabled");
 }
 
 /**************************************************************************
@@ -34,6 +38,9 @@ function startTimer(){
 **************************************************************************/
 function pauseTimer(){
     clearInterval(timer);
+    START.disabled = false;
+    START.classList.add("btn-enabled")
+    START.classList.remove("btn-disabled");
 }
 
 /**************************************************************************
@@ -44,6 +51,9 @@ function resetTimer(){
     pauseTimer();
     timeInMs = 0;
     updateTimer();
+    START.disabled = false;
+    START.classList.add("btn-enabled")
+    START.classList.remove("btn-disabled");
 }
 
 START.addEventListener("click",startTimer);

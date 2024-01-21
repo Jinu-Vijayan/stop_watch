@@ -45,5 +45,12 @@ main>h1{
     font-size: 1rem;
     color: #ffffff;
     background-image: linear-gradient(to right,blue,red);
+}
+
+.btn-enabled{
     cursor: pointer;
+}
+
+.btn-disabled{
+    cursor: not-allowed;
 }
